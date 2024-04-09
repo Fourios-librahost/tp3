@@ -39,7 +39,9 @@
 	 */
 	public boolean achatDevise (double montantEuros)
 	{
-	return valeurEnEuros() >= 0;
+		if (montantEuros < 0) return false;
+		this.montant += montantEuros / this.monnaie.getValeurDeJeton();
+		return true;
 	}
 
 	/**
